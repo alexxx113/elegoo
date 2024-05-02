@@ -35,7 +35,7 @@ chmod a+x /config.yaml
 
 echo "start config web"
 
-python3 /RPP/rpp.py
+/RPP/rpp.py
 
 #echo "start alarmserver"
 #/alarmserver-linux-raspberry 
