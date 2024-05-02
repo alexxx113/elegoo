@@ -1,4 +1,4 @@
-
+#!/bin/bash
 file="/config.yaml"
 echo "debug: "${DEBUG} > "${file}"
 ## append ##
