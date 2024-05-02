@@ -9,7 +9,15 @@ RUN pip3 install alive-progress --break-system-packages
 WORKDIR /
 
 
+#RUN echo "run.sh run"
 
+
+
+
+COPY /elegoo/* /
+#RUN chmod a+x /alarmserver-linux-raspberry
+#RUN chmod a+x /config.yaml
+#CMD [ "/alarmserver-linux-raspberry" ]
 RUN chmod -R 775 /RPP/uploads
 RUN chown -R www-data:www-data /RPP/uploads
 RUN chmod -R 775 /RPP/printer_ip.txt
@@ -17,12 +25,6 @@ RUN chown -R www-data:www-data /RPP/printer_ip.txt
 
 RUN chmod a+x /RPP/rpp.py
 RUN chmod a+x /RPP/cassini.py
-
-COPY /elegoo/* /
-#RUN chmod a+x /alarmserver-linux-raspberry
-#RUN chmod a+x /config.yaml
-#CMD [ "/alarmserver-linux-raspberry" ]
-
 
 #COPY run.sh /data/
 RUN chmod a+x /run.sh
