@@ -1,4 +1,4 @@
-name: "AlarmServer"
+name: "Elegoo"
 description: "My first real add-on!"
 version: "1.0.0"
 slug: "example"
@@ -17,8 +17,8 @@ init: false
   
 startup: before
 ports:
-  15002/tcp: 15002
-  21/tcp: 21
+  5001/tcp: 5001
+  #21/tcp: 21
   #8000/tcp: 8000  
 map:
   - config:rw
