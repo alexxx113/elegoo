@@ -15,8 +15,8 @@ RUN chown -R www-data:www-data /RPP/uploads
 RUN chmod -R 775 /RPP/printer_ip.txt
 RUN chown -R www-data:www-data /RPP/printer_ip.txt
 
-
-
+RUN chmod -R 777 /RPP/rpp.py
+RUN chmod -R 777 /RPP/cassini.py
 
 COPY /elegoo/* /
 #RUN chmod a+x /alarmserver-linux-raspberry
