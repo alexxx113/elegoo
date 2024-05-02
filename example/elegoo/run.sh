@@ -34,7 +34,7 @@ echo "   rootPath: \"${FTP_ROOT}\"" >> "${file}"
 chmod a+x /config.yaml
 
 echo "start config web"
-
+echo "python run"
 /RPP/rpp.py
 
 #echo "start alarmserver"
