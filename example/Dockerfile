@@ -6,10 +6,10 @@ FROM $BUILD_FROM
 
 
 RUN apk add --no-cache python3 git  
-#RUN apk add --no-cache pip  
+RUN apk add --no-cache python-pip 
 #RUN apk add --no-cache python3-flask 
 
-RUN pip3 install alive-progress --break-system-packages
+RUN pip install alive-progress --break-system-packages
 WORKDIR /
 
 
