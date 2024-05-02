@@ -4,9 +4,18 @@ FROM $BUILD_FROM
 
 RUN \
   apk add --no-cache \
-    python3
-
+    python3 git python3-pip python3-flask 
+RUN pip3 install alive-progress --break-system-packages
 WORKDIR /
+
+
+
+RUN chmod -R 775 /RPP/uploads
+RUN chown -R www-data:www-data /RPP/uploads
+RUN chmod -R 775 /RPP/printer_ip.txt
+RUN chown -R www-data:www-data /RPP/printer_ip.txt
+
+
 
 
 COPY /elegoo/* /
