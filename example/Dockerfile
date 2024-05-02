@@ -2,9 +2,13 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-RUN \
-  apk add --no-cache \
-    python3 git python3-pip python3-flask 
+
+
+
+RUN apk add --no-cache python3 git  
+RUN apk add --no-cache python3-pip  
+RUN apk add --no-cache python3-flask 
+
 RUN pip3 install alive-progress --break-system-packages
 WORKDIR /
 
