@@ -1,6 +1,6 @@
 name: "Elegoo"
 description: "My first real add-on!"
-version: "1.0.0"
+version: "1.0.1"
 slug: "example"
 advanced: true
 arch:
