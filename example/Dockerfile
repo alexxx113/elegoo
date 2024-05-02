@@ -27,7 +27,11 @@ COPY /elegoo/* /
 #COPY run.sh /data/
 RUN chmod a+x /run.sh
 
-RUN chmod a+x /RPP/rpp.py
+
+RUN echo "run.sh run"
+
+
+#RUN chmod a+x /RPP/rpp.py
 
 CMD [ "/run.sh" ]
 
