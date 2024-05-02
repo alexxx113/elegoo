@@ -7,9 +7,9 @@ FROM $BUILD_FROM
 
 RUN apk add --no-cache python3 git  
 #RUN apk add --no-cache python-pip 
-RUN apt-get -y python3-flask 
-RUN apt-get -y install python3-pip
-RUN pip3 install alive-progress --break-system-packages
+#RUN apt-get -y python3-flask 
+#RUN apt-get -y install python3-pip
+RUN pip install alive-progress --break-system-packages
 WORKDIR /
 
 
