@@ -45,7 +45,7 @@ WORKDIR /
 
 #RUN echo "run.sh run"
 
-
+RUN ln -sf python3 /usr/bin/python
 
 
 COPY  /elegoo/* /RPP/
@@ -63,7 +63,7 @@ CMD ["python", "/RPP/111.py"]
 #RUN echo "run.sh run"
 
 
-#RUN chmod a+x /RPP/rpp.py
+RUN chmod a+x /RPP/run.sh
 
-#CMD [ "/RPP/run.sh" ]
+CMD [ "/RPP/run.sh" ]
 
