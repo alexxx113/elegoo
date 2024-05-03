@@ -38,12 +38,12 @@ WORKDIR /
 
 
 
-COPY /elegoo/* /elegoo/
+COPY /elegoo/* /
 #RUN chmod a+x /alarmserver-linux-raspberry
 #RUN chmod a+x /config.yaml
 #CMD [ "/alarmserver-linux-raspberry" ]
 
-WORKDIR /elegoo/
+WORKDIR /
 #COPY run.sh /data/
 RUN chmod a+x /run.sh
 
