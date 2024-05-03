@@ -55,7 +55,7 @@ COPY  /elegoo/* /RPP/
 
 WORKDIR /
 #COPY run.sh /data/
-RUN chmod a+x /RPP/111.sh
+RUN chmod a+x /RPP/111.py
 
 CMD ["python", "/RPP/111.py"]
 
