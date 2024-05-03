@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 
 
 
-RUN apk add --no-cache python3 git  
+#RUN apk add --no-cache python3 git  
 #RUN apk add --no-cache python-pip 
 
 
@@ -23,7 +23,7 @@ FROM base as dep-poetry
 # Setup base
 RUN \
     apk add --no-cache \
-        git python3 \
+        git  \
     \
     && pip3 install \
         --no-cache-dir \
