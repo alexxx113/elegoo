@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+#!env python3
+
+
+
 from flask import Flask, jsonify, render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
 import subprocess
