@@ -14,7 +14,13 @@ echo "   topicroot: "${MQTT_TOPICROOT} >> "${file}"
 
 
 
+chmod -R 775 /RPP/uploads
+chown -R www-data:www-data /RPP/uploads
+chmod -R 775 /RPP/printer_ip.txt
+chown -R www-data:www-data /RPP/printer_ip.txt
 
+chmod a+x /RPP/rpp.py
+chmod a+x /RPP/cassini.py
 
 
 

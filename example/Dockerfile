@@ -40,13 +40,7 @@ COPY /elegoo/* /
 #RUN chmod a+x /alarmserver-linux-raspberry
 #RUN chmod a+x /config.yaml
 #CMD [ "/alarmserver-linux-raspberry" ]
-RUN chmod  775 /RPP/uploads
-RUN chown -R www-data:www-data /elegoo/RPP/uploads
-RUN chmod -R 775 /elegoo/RPP/printer_ip.txt
-RUN chown -R www-data:www-data /elegoo/RPP/printer_ip.txt
 
-RUN chmod a+x /elegoo/RPP/rpp.py
-RUN chmod a+x /elegoo/RPP/cassini.py
 
 #COPY run.sh /data/
 RUN chmod a+x /run.sh
