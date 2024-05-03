@@ -1,4 +1,8 @@
 #!/bin/bash
+
+echo "run run run"
+
+
 file="/config.yaml"
 echo "debug: "${DEBUG} > "${file}"
 ## append ##

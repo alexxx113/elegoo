@@ -46,7 +46,7 @@ COPY /elegoo/* /
 RUN chmod a+x /run.sh
 
 
-RUN echo "run.sh run"
+#RUN echo "run.sh run"
 
 
 #RUN chmod a+x /RPP/rpp.py
