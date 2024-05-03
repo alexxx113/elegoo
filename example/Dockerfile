@@ -5,8 +5,26 @@ FROM $BUILD_FROM
 
 
 
-RUN apk add --no-cache python3 git  pip3
+RUN apk add --no-cache python3 git  
 #RUN apk add --no-cache python-pip 
+
+
+
+FROM python:3.11-alpine3.18
+
+# Setup base
+RUN \
+    apk add --no-cache \
+        git \
+    \
+    && pip3 install \
+        --no-cache-dir \
+        --prefer-binary \
+        --find-links "https://wheels.home-assistant.io/musllinux/" \
+        repository-updater==1.3.0
+
+
+
 #RUN apt-get -y python3-flask 
 #RUN apt-get -y install python3-pip
 RUN pip install alive-progress #--break-system-packages
