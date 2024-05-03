@@ -18,13 +18,13 @@ echo "   topicroot: "${MQTT_TOPICROOT} >> "${file}"
 
 
 
-chmod -R 775 /RPP/uploads
-chown -R www-data:www-data /RPP/uploads
-chmod -R 775 /RPP/printer_ip.txt
-chown -R www-data:www-data /RPP/printer_ip.txt
+chmod -R 775 ./RPP/uploads
+chown -R www-data:www-data ./RPP/uploads
+chmod -R 775 ./RPP/printer_ip.txt
+chown -R www-data:www-data ./RPP/printer_ip.txt
 
-chmod a+x /RPP/rpp.py
-chmod a+x /RPP/cassini.py
+chmod a+x ./RPP/rpp.py
+chmod a+x ./RPP/cassini.py
 
 
 
@@ -38,14 +38,14 @@ echo "   rootPath: \"${FTP_ROOT}\"" >> "${file}"
 
 
 
-
+ls
 
 
 chmod a+x /config.yaml
 
 echo "start config web 5555"
 echo "python run"
-/RPP/rpp.py
+./RPP/rpp.py
 
 #echo "start alarmserver"
 #/alarmserver-linux-raspberry 
