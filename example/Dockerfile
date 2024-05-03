@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 
 
 
-RUN apk add --no-cache python3 git  
+RUN apk add --no-cache python3 git  pip3
 #RUN apk add --no-cache python-pip 
 #RUN apt-get -y python3-flask 
 #RUN apt-get -y install python3-pip
