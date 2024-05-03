@@ -15,7 +15,7 @@ echo "   server: \"${MQTT_SERVER}\"" >> "${file}"
 echo "   topicroot: "${MQTT_TOPICROOT} >> "${file}"
 
 
-ls -d1 /RRF/*
+#ls -d1 /RRF/*
 
 
 chmod -R 775 /RPP/uploads
@@ -36,15 +36,15 @@ echo "   password: \"${FTP_PASSWORD}\"" >> "${file}"
 echo "   allowFiles: "${FTP_ALLOW} >> "${file}"
 echo "   rootPath: \"${FTP_ROOT}\"" >> "${file}"
 
-pwd
+#pwd
 
-ls 
+#ls 
 
 chmod a+x /config.yaml
 
 echo "start config web 5555"
 echo "python run"
-python3 /RPP/rpp.py
+python /RPP/rpp.py
 
 #echo "start alarmserver"
 #/alarmserver-linux-raspberry 
