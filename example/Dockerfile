@@ -1,41 +1,30 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 ARG BUILD_FROM
 FROM $BUILD_FROM
-
-
-
-
-#RUN apk add --no-cache python3 git  
-#RUN apk add --no-cache python-pip 
-
-
-
-FROM python:3.11-alpine3.18 as base
- 
-# This flag is important to output python logs correctly in docker!
-ENV PYTHONUNBUFFERED 1
-# Flag to optimize container size a bit by removing runtime python cache
-ENV PYTHONDONTWRITEBYTECODE 1
-#WORKDIR /code
- 
-FROM base as dep-poetry
-
-# Setup base
+LABEL org.opencontainers.image.source https://github.com/unl0ck/homeassistant-addon-viessmann-gridbox
 RUN \
-    apk add --no-cache \
-        git  \
-    \
-    && pip3 install \
-        --no-cache-dir \
-        --prefer-binary \
-        --find-links "https://wheels.home-assistant.io/musllinux/" \
-        repository-updater==1.3.0
+  apk add --no-cache \
+    python3 py3-pip py3-flask
+RUN ln -sf python3 /usr/bin/python
+COPY rootfs /
+#WORKDIR /data
 
+# Execute during the build of the image
+ARG TEMPIO_VERSION BUILD_ARCH
+RUN \
+    curl -sSLf -o /usr/bin/tempio \
+    "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
+# Copy root filesystem
+COPY GridboxConnector/ /build/GridboxConnector
+COPY cloudSettings.json /data/cloudSettings.json
+COPY cloudSettings.json /build/.
+WORKDIR /build/GridboxConnector
+#RUN pip install -r requirements.txt
 
 #RUN apt-get -y python3-flask 
 #RUN apt-get -y install python3-pip
-RUN pip install alive-progress flask #--break-system-packages
+RUN pip install alive-progress # flask #--break-system-packages
 
 ARG BUILD_FROM
 FROM $BUILD_FROM
