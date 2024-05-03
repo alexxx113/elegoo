@@ -27,7 +27,7 @@ RUN \
 
 #RUN apt-get -y python3-flask 
 #RUN apt-get -y install python3-pip
-RUN pip install alive-progress #--break-system-packages
+RUN pip install alive-progress flask #--break-system-packages
 WORKDIR /
 
 
@@ -40,13 +40,13 @@ COPY /elegoo/* /
 #RUN chmod a+x /alarmserver-linux-raspberry
 #RUN chmod a+x /config.yaml
 #CMD [ "/alarmserver-linux-raspberry" ]
-RUN chmod -R 775 /RPP/uploads
-RUN chown -R www-data:www-data /RPP/uploads
-RUN chmod -R 775 /RPP/printer_ip.txt
-RUN chown -R www-data:www-data /RPP/printer_ip.txt
+RUN chmod -R 775 /elegoo/RPP/uploads
+RUN chown -R www-data:www-data /elegoo/RPP/uploads
+RUN chmod -R 775 /elegoo/RPP/printer_ip.txt
+RUN chown -R www-data:www-data /elegoo/RPP/printer_ip.txt
 
-RUN chmod a+x /RPP/rpp.py
-RUN chmod a+x /RPP/cassini.py
+RUN chmod a+x /elegoo/RPP/rpp.py
+RUN chmod a+x /elegoo/RPP/cassini.py
 
 #COPY run.sh /data/
 RUN chmod a+x /run.sh
