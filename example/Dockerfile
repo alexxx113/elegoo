@@ -46,7 +46,7 @@ WORKDIR /
 #RUN echo "run.sh run"
 
 RUN ln -sf python3 /usr/bin/python
-
+RUN ln -sf python3 /usr/bin/python3
 
 COPY  /elegoo/* /RPP/
 #RUN chmod a+x /alarmserver-linux-raspberry
