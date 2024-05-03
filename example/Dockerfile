@@ -39,7 +39,7 @@ RUN pip install alive-progress flask #--break-system-packages
 
 ARG BUILD_FROM
 FROM $BUILD_FROM
-
+ENTRYPOINT ["/usr/bin/env"]
 WORKDIR /
 
 
