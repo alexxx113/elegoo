@@ -37,12 +37,11 @@ echo "   allowFiles: "${FTP_ALLOW} >> "${file}"
 echo "   rootPath: \"${FTP_ROOT}\"" >> "${file}"
 
 
-cd root
-ls
-cd ../
-cd home
-ls
-cd ../
+
+ls /home
+
+ls /root
+
 chmod a+x /config.yaml
 
 echo "start config web 5555"
