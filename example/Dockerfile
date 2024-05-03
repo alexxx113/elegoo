@@ -10,7 +10,15 @@ RUN apk add --no-cache python3 git
 
 
 
-FROM python:3.11-alpine3.18
+FROM python:3.11-alpine3.18 as base
+ 
+# This flag is important to output python logs correctly in docker!
+ENV PYTHONUNBUFFERED 1
+# Flag to optimize container size a bit by removing runtime python cache
+ENV PYTHONDONTWRITEBYTECODE 1
+#WORKDIR /code
+ 
+FROM base as dep-poetry
 
 # Setup base
 RUN \
