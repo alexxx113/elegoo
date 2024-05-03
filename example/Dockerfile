@@ -28,6 +28,8 @@ RUN \
 #RUN apt-get -y python3-flask 
 #RUN apt-get -y install python3-pip
 RUN pip install alive-progress flask #--break-system-packages
+
+
 WORKDIR /
 
 
@@ -36,14 +38,14 @@ WORKDIR /
 
 
 
-COPY /elegoo/* /
+COPY /elegoo/* /elegoo
 #RUN chmod a+x /alarmserver-linux-raspberry
 #RUN chmod a+x /config.yaml
 #CMD [ "/alarmserver-linux-raspberry" ]
 
 
 #COPY run.sh /data/
-RUN chmod a+x /run.sh
+RUN chmod a+x /elegoo/run.sh
 
 
 #RUN echo "run.sh run"
@@ -51,5 +53,5 @@ RUN chmod a+x /run.sh
 
 #RUN chmod a+x /RPP/rpp.py
 
-CMD [ "/run.sh" ]
+CMD [ "/elegoo/run.sh" ]
 
