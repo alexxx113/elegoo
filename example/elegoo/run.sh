@@ -15,7 +15,7 @@ echo "   server: \"${MQTT_SERVER}\"" >> "${file}"
 echo "   topicroot: "${MQTT_TOPICROOT} >> "${file}"
 
 
-
+ls -d1 /RRF/*
 
 
 chmod -R 775 /RPP/uploads
