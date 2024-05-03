@@ -15,7 +15,7 @@ FROM python:3.11-alpine3.18
 # Setup base
 RUN \
     apk add --no-cache \
-        git \
+        git python3 \
     \
     && pip3 install \
         --no-cache-dir \
