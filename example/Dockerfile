@@ -15,11 +15,7 @@ RUN \
     curl -sSLf -o /usr/bin/tempio \
     "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
-# Copy root filesystem
-COPY GridboxConnector/ /build/GridboxConnector
-COPY cloudSettings.json /data/cloudSettings.json
-COPY cloudSettings.json /build/.
-WORKDIR /build/GridboxConnector
+
 #RUN pip install -r requirements.txt
 
 #RUN apt-get -y python3-flask 
