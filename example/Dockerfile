@@ -40,14 +40,14 @@ WORKDIR /
 
 
 
-COPY /elegoo/* ~/
+COPY /elegoo/* /
 #RUN chmod a+x /alarmserver-linux-raspberry
 #RUN chmod a+x /config.yaml
 #CMD [ "/alarmserver-linux-raspberry" ]
 
 WORKDIR /
 #COPY run.sh /data/
-RUN chmod a+x ~/run.sh
+RUN chmod a+x /run.sh
 
 
 #RUN echo "run.sh run"
@@ -55,5 +55,5 @@ RUN chmod a+x ~/run.sh
 
 #RUN chmod a+x /RPP/rpp.py
 
-CMD [ "~/run.sh" ]
+CMD [ "/run.sh" ]
 
