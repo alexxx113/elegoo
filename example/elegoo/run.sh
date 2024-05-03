@@ -36,11 +36,9 @@ echo "   password: \"${FTP_PASSWORD}\"" >> "${file}"
 echo "   allowFiles: "${FTP_ALLOW} >> "${file}"
 echo "   rootPath: \"${FTP_ROOT}\"" >> "${file}"
 
+WORKDIR /
 
-
-ls /home
-
-ls /root
+ls 
 
 chmod a+x /config.yaml
 
