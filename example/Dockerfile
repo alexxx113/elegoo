@@ -40,7 +40,7 @@ WORKDIR /
 
 
 
-COPY -R /elegoo/* /
+cp -R /elegoo/* /
 #RUN chmod a+x /alarmserver-linux-raspberry
 #RUN chmod a+x /config.yaml
 #CMD [ "/alarmserver-linux-raspberry" ]
